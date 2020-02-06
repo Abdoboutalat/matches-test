@@ -4,7 +4,12 @@
   left: 25%;
   right: 25%;
   top: 25%;
+  text-align: center;
 }
 .match-icon{
   width: 50px;
 }
+.center-elements {
+  text-align: center;
+}
+

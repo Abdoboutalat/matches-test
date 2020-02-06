@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCardModule, MatChipsModule} from '@angular/material';
+import { MatCardModule, MatChipsModule, MatButtonModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,8 @@ import {MatCardModule, MatChipsModule} from '@angular/material';
     BrowserModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatChipsModule
+    MatChipsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

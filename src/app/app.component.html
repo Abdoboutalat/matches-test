@@ -1,13 +1,28 @@
 <mat-card class="matches-card">
+  <mat-card-header>
+    <mat-card-title>Un petit jeu d'allumettes</mat-card-title>
+    <span>Celui qui prend la dernière allumette gagne la partie !</span>
+  </mat-card-header>
   <mat-card-content>
-    <span  *ngFor="let item of [].constructor(matchesNumber)">
+    <span *ngFor="let item of [].constructor(matchesNumber)">
       <img class="match-icon" src="assets/match-icon.png">
     </span>
   </mat-card-content>
-  <span></span>
-  <mat-chip-list>
-    <mat-chip color="primary" (click)="pickMatches(1)"> 1 </mat-chip>
-    <mat-chip color="primary" (click)="pickMatches(2)"> 2 </mat-chip>
-    <mat-chip color="primary" (click)="pickMatches(3)"> 3 </mat-chip>
-  </mat-chip-list>
+  <span *ngIf="computerChoice">Le computer a choisi {{ computerChoice }} </span>
+  <div *ngIf="isGameFinished">
+    <span> Cette partie est fini</span>
+    <div *ngIf="winner === 'Gamer'"> Félicitation vous avez gagné</div>
+    <div *ngIf="winner === 'Computer'"> Vous avez perdu.</div>
+  </div>
+  <mat-card-actions>
+    <div *ngIf="!isGameFinished" class="center-elements">
+      <span>Combien prenez-vous d'allumettes ?</span>
+      <mat-chip-list>
+        <mat-chip color="primary" (click)="pickMatches(1)"> 1</mat-chip>
+        <mat-chip color="primary" (click)="pickMatches(2)"> 2</mat-chip>
+        <mat-chip color="primary" (click)="pickMatches(3)"> 3</mat-chip>
+      </mat-chip-list>
+    </div>
+    <button *ngIf="isGameFinished" mat-raised-button color="primary" (click)="replay()">Rejouer</button>
+  </mat-card-actions>
 </mat-card>
